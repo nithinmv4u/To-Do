@@ -8,7 +8,7 @@ import AuthContext, { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <div className='flex items-center justify-center h-screen bg-zinc-900'>
+    <div className='flex items-center justify-center bg-zinc-900 h-screen'>
       <div className='w-[50%] bg-green-400 p-2 m-2'>
         <Router>
           <AuthProvider>
