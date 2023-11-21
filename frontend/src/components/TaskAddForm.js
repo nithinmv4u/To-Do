@@ -28,10 +28,10 @@ const TaskAddForm = ({handleAddTask}) => {
     }
 
     return (
-        <div>
-            <input type="text" placeholder="Title" value={title} onChange={(e)=>setTitle(e.target.value)} />
-            <input type="text" placeholder="Description" value={description} onChange={(e)=>setDescription(e.target.value)} />
-            <input type="datetime-local" placeholder="Due Date" value={dueDate} onChange={(e)=>setDueDate(e.target.value)} />
+        <div className="p-2 m-2 bg-blue-700 rounded-md flex flex-col">
+            <input className="p-1 rounded-sm m-1" type="text" placeholder="Title" value={title} onChange={(e)=>setTitle(e.target.value)} />
+            <input className="p-1 rounded-sm m-1 h-20" type="text" placeholder="Description" value={description} onChange={(e)=>setDescription(e.target.value)} />
+            <input className="p-1 rounded-sm m-1 w-1/3" type="datetime-local" placeholder="Due Date" value={dueDate} onChange={(e)=>setDueDate(e.target.value)} />
             <button onClick={handleSubmit}>Add</button>
             {error && <p>{error}</p>}
         </div>

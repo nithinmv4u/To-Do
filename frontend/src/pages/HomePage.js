@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import { jwtDecode as jwt_decode} from "jwt-decode";
-// import axiosInstance from "../utils/axiosInstance";
 import useAxios from "../utils/useAxios";
 import TaskAddForm from "../components/TaskAddForm";
 import TaskEditForm from "../components/TaskEditForm";
@@ -108,7 +107,7 @@ const HomePage = () => {
             </ul>
             {tasks.previous && <button onClick={handlePreviousPage}>Previous</button>}
             {tasks.next && <button onClick={handleNextPage}>Next</button>}
-            <div>                
+            <div className="bg-blue-800 p-2">                
             {
                 showAddTask ? (
                         <>
