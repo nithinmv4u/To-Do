@@ -6,7 +6,7 @@ import AuthContext from "../context/AuthContext";
 const Header = () => {
     const { user, logoutUser } = useContext(AuthContext)
     return (
-        <div className="bg-indigo-800">
+        <div className="bg-indigo-800 w-full">
             {
                 user ? <div className="flex justify-around items-center p-2 font-bold text-white">
                     <h1>{user.username}'s Todo</h1>
@@ -14,7 +14,7 @@ const Header = () => {
                         logoutUser();
                     }}>Logout</button>
                     </div>
-                : <div className="flex justify-around items-center p-2 font-bold text-white"><h1>ToDo App</h1></div> 
+                : <div className="rounded-sm p-2 font-bold text-white text-center"><h1>ToDo App</h1></div> 
             }
             
         </div>

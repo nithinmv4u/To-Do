@@ -8,8 +8,7 @@ import AuthContext, { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <div className='flex items-center justify-center bg-zinc-900 h-screen'>
-      <div className='w-[50%] bg-green-400 p-2 m-2'>
+    <div className='bg-cyan-200 h-screen'>
         <Router>
           <AuthProvider>
             <Header/>
@@ -19,11 +18,8 @@ function App() {
             </Routes>
           </AuthProvider>
         </Router>
-      </div>
     </div>
-
-
-  );
+    );
 }
 
 export default App;
