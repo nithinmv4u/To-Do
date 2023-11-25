@@ -100,24 +100,29 @@ const HomePage = () => {
 
 
     return tasks?.count ? (
-        <div className="h-fit">
-            <ul>
-                { tasks.results.map((task) =>(<TaskTile task={task}  {...homeContext} />))}
-                {showEditTask && <TaskEditForm OnSave={OnSave} task={showEditTask}/>}
-            </ul>
-            {tasks.previous && <button onClick={handlePreviousPage}>Previous</button>}
-            {tasks.next && <button onClick={handleNextPage}>Next</button>}
-            <div className="bg-blue-800 p-2">                
-            {
-                showAddTask ? (
-                        <>
-                        <TaskAddForm handleAddTask={handleAddTask}/>
-                        <button className="hover:text-yellow-200 bg-orange-700 rounded-md p-2 mx-2" onClick={()=>handleAddTask()}>Close</button>
-                        </>
-                    ) : (
-                        <button className="hover:text-yellow-200 bg-orange-700 rounded-md p-2 mx-2" onClick={()=>handleAddTask()}>Add Task</button>
-                    )
-            }
+        <div className="h-auto flex justify-around">
+            <div className="w-8/12 ">
+                <ul className="m-2 p-2 shadow-2xl rounded-md">
+                    { tasks.results.map((task) =>(<TaskTile task={task}  {...homeContext} />))}
+                    {showEditTask && <TaskEditForm OnSave={OnSave} task={showEditTask}/>}
+                </ul>
+                {tasks.previous && <button onClick={handlePreviousPage}>Previous</button>}
+                {tasks.next && <button onClick={handleNextPage}>Next</button>}
+            </div>
+            
+            <div className="w-3/12 p-2 m-2">
+                <div className="fixed w-3/12 bg-cyan-900 rounded-md text-center">
+                    {
+                        showAddTask ? (
+                                <>
+                                <button className="hover:text-red-400 rounded-md p-2 mx-2 text-white" onClick={()=>handleAddTask()}>Close</button>
+                                <TaskAddForm handleAddTask={handleAddTask}/>
+                                </>
+                            ) : (
+                                <button className="hover:text-yellow-200 rounded-md p-2 mx-2 text-white" onClick={()=>handleAddTask()}>Add Task</button>
+                            )
+                    }
+                </div>              
             </div>
         </div>
     ) : (

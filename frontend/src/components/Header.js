@@ -6,15 +6,15 @@ import AuthContext from "../context/AuthContext";
 const Header = () => {
     const { user, logoutUser } = useContext(AuthContext)
     return (
-        <div className="bg-indigo-800 w-full">
+        <div className="bg-cyan-900 h-auto w-full sticky top-0">
             {
-                user ? <div className="flex justify-around items-center p-2 font-bold text-white">
+                user ? <div className="flex justify-around items-center p-4 font-bold text-white">
                     <h1>{user.username}'s Todo</h1>
-                    <button className="hover:text-yellow-200 bg-orange-700 rounded-md p-2 mx-2"  onClick={() => {
+                    <button className="hover:text-cyan-300 rounded-md p-2 mx-2"  onClick={() => {
                         logoutUser();
                     }}>Logout</button>
                     </div>
-                : <div className="rounded-sm p-2 font-bold text-white text-center"><h1>ToDo App</h1></div> 
+                : <div className="rounded-sm p-4 font-bold text-white text-center"><h1>ToDo App</h1></div> 
             }
             
         </div>
