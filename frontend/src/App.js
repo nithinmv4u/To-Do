@@ -8,7 +8,7 @@ import AuthContext, { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <div className='bg-cyan-200 h-screen'>
+    <div className=''>
         <Router>
           <AuthProvider>
             <Header/>
