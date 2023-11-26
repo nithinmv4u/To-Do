@@ -10,7 +10,7 @@ const Header = () => {
             {
                 user ? <div className="flex justify-around items-center p-4 font-bold text-white">
                     <h1>{user.username}'s Todo</h1>
-                    <button className="hover:text-cyan-300 rounded-md p-2 mx-2 border border-cyan-900 hover:border-red-600"  onClick={() => {
+                    <button className="hover:text-red-500 bg-cyan-900 rounded-md p-2 mx-2"  onClick={() => {
                         logoutUser();
                     }}>Logout</button>
                     </div>
