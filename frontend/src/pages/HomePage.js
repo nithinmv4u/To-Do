@@ -5,6 +5,7 @@ import useAxios from "../utils/useAxios";
 import TaskAddForm from "../components/TaskAddForm";
 import TaskEditForm from "../components/TaskEditForm";
 import TaskTile from "../components/TaskTile";
+import TaskFilterForm from "../components/TaskFilterForm";
 
 const HomePage = () => {
     const {authToken, logoutUser} = useContext(AuthContext)
@@ -102,6 +103,9 @@ const HomePage = () => {
     return tasks?.count ? (
         <div className="min-h-screen flex justify-around" style={{ background: `url('public_assets/dubai.jpg')`, backgroundSize: 'cover' }}>
             <div className="w-8/12 bg-opacity-70">
+                <div className="sticky top-0 m-2 p-2 bg-cyan-900 rounded-md text-center bg-opacity-75">
+                    <TaskFilterForm/>
+                </div>   
                 <ul className="m-2 p-2 shadow-2xl rounded-md">
                     { tasks.results.map((task) =>(<TaskTile task={task}  {...homeContext} />))}
                     {showEditTask && <TaskEditForm OnSave={OnSave} task={showEditTask}/>}
@@ -124,7 +128,7 @@ const HomePage = () => {
                                 <button className="hover:text-yellow-200 rounded-md p-2 mx-2 text-white w-full font-semibold" onClick={()=>handleAddTask()}>Add Task</button>
                             )
                     }
-                </div>              
+                </div>
             </div>
         </div>
     ) : (

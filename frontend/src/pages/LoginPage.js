@@ -6,8 +6,8 @@ const LoginPage = () => {
     const { loginUser } = useContext(AuthContext)
     return(
         <div className='flex flex-col justify-center items-center h-screen' style={{ background: `url('public_assets/ferris-wheel-dubai.jpg')`, backgroundSize: 'cover' }}>
-            <p className="text-2xl text-cyan-950 font-semibold mb-6">Login Page</p>
             <div className="w-4/8 bg-cyan-400 rounded-md p-8 shadow-md drop-shadow-2xl bg-opacity-70">
+            <p className="text-cyan-950 font-semibold mb-6">Please enter your credentials : </p>
             <form onSubmit={loginUser} className="bg-gradient-to-r from-cyan-900 to-orange-600 hover:from-orange-600 hover:to-cyan-900 p-6 shadow-md rounded-lg">
                 <input
                 type="text"

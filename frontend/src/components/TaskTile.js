@@ -16,7 +16,7 @@ const TaskTile = ({ task, handleEditTask, handleTaskCompletion, handleDeleteTask
                 <label className="flex items-center">
                     <input
                     type="checkbox"
-                    checked={task.is_completed}
+                    checked={task?.is_completed}
                     onChange={() => handleTaskCompletion(task.id, !task.is_completed)}
                     />
                     <span className="text-sm font-medium">Completed</span>
