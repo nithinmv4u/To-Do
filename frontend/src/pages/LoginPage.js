@@ -3,7 +3,8 @@ import AuthContext from "../context/AuthContext";
 
 const LoginPage = () => {
 
-    const { loginUser } = useContext(AuthContext)
+    const { loginUser, handleSignUp } = useContext(AuthContext)
+
     return(
         <div className='flex flex-col justify-center items-center h-screen' style={{ background: `url('public_assets/ferris-wheel-dubai.jpg')`, backgroundSize: 'cover' }}>
             <div className="w-4/8 bg-cyan-400 rounded-md p-8 shadow-md drop-shadow-2xl bg-opacity-70">
@@ -22,7 +23,7 @@ const LoginPage = () => {
                 className="w-full my-4 p-2 border rounded"
                 />
                 <div className="my-4 flex justify-around">
-                    <button
+                    <button onClick={handleSignUp}
                     className="w-1/4 bg-cyan-700 text-white p-2 rounded hover:bg-blue-700"
                     >
                     Sign UP

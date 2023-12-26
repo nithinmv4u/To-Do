@@ -9,11 +9,19 @@ const PrivateRoute = ({ children , ...rest }) => {
     if(user)console.log("user presernt");
     else console.log("user unavailable");
     // const authenticated = user ? true : false
-    return user ? (
+    return (
         <Routes>
-            <Route {...rest} >{children }</Route>
-        </Routes>) :
-        <Navigate to='/login'/>
+            <Route
+                {...rest}
+                element={user ? (
+                children
+                ) : (
+                <Navigate to="/login" replace={true} />
+                )}
+            />
+        </Routes>
+
+    )
 }
 
 export default PrivateRoute;

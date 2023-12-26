@@ -55,13 +55,18 @@ export const AuthProvider = ({children}) => {
         navigate('/login')
     }
 
+    const handleSignUp = () => {
+        navigate('/signup')
+    }
+
     const contextData = {
         user : user,
         authToken : authToken,
         setUser : setUser,
         setAuthToken : setAuthToken,
         loginUser : loginUser,
-        logoutUser : logoutUser, 
+        logoutUser : logoutUser,
+        handleSignUp : handleSignUp, 
     }
     return (
         <AuthContext.Provider value={contextData}>
