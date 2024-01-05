@@ -56,7 +56,9 @@ export const AuthProvider = ({children}) => {
     }
 
     const handleSignUp = () => {
-        navigate('/signup')
+        return ()=>{
+            navigate('/signup')
+        }
     }
 
     const contextData = {

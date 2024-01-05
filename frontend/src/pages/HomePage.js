@@ -19,7 +19,7 @@ const HomePage = () => {
 
     console.log(tasks);
     console.log(tasks.count);
-    console.log("access HomePage",jwt_decode(authToken.access));
+    console.log("access HomePage",jwt_decode(authToken?.access));
 
     const getTasks = async(page) => {
         console.log("get Tasks");

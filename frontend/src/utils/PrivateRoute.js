@@ -11,14 +11,7 @@ const PrivateRoute = ({ children , ...rest }) => {
     // const authenticated = user ? true : false
     return (
         <Routes>
-            <Route
-                {...rest}
-                element={user ? (
-                children
-                ) : (
-                <Navigate to="/login" replace={true} />
-                )}
-            />
+            {<Route {...rest} element={user ? children : <Navigate to='/login' replace />}/>}
         </Routes>
 
     )

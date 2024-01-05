@@ -16,7 +16,7 @@ function App() {
             <PrivateRoute path="/" exact Component={HomePage} />
             <Routes>          
               <Route Component={LoginPage} path='/login'/>
-              <Route Component={SignUpPage} path='/signup' />
+              {/* <Route Component={SignUpPage} path='/signup' /> */}
             </Routes>
           </AuthProvider>
         </Router>
